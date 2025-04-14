@@ -8,4 +8,9 @@ public class PlayerAnimator : MonoBehaviour
     {
         _animator.SetFloat(ConstantsData.AnimatorParameters.SpeedX, Mathf.Abs(speedX));
     }
+
+    public void SetBoolJump(bool isJump)
+    {
+        _animator.SetBool(ConstantsData.AnimatorParameters.Jump, isJump);
+    }
 }

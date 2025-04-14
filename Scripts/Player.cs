@@ -26,6 +26,13 @@ public class Player : MonoBehaviour
             _mover.Move(_inputReader.Direction);
 
         if (_inputReader.GetIsJump() && _groundDetector.IsGround)
+        {
+            _playerAnimator.SetBoolJump(true);
             _mover.Jump();
+        } 
+        else if (!_inputReader.GetIsJump() && _groundDetector.IsGround)
+        {
+            _playerAnimator.SetBoolJump(false);
+        }
     }
 }

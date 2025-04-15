@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class PlayerAnimator : MonoBehaviour
-{
+public class PlayerAnimator : MonoBehaviour {
     [SerializeField] private Animator _animator;
 
     public void SetSpeedX(float speedX)
@@ -9,8 +8,12 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetFloat(ConstantsData.AnimatorParameters.SpeedX, Mathf.Abs(speedX));
     }
 
-    public void SetBoolJump(bool isJump)
+    public void ActivatePlayJump() => PlayJump(true);
+
+    public void DeactivatePlayJump() => PlayJump(false);
+
+    private void PlayJump(bool playJumpIsActive)
     {
-        _animator.SetBool(ConstantsData.AnimatorParameters.Jump, isJump);
+        _animator.SetBool(ConstantsData.AnimatorParameters.Jump, playJumpIsActive);
     }
 }

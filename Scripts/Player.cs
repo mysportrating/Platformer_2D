@@ -27,12 +27,12 @@ public class Player : MonoBehaviour
 
         if (_inputReader.GetIsJump() && _groundDetector.IsGround)
         {
-            _playerAnimator.SetBoolJump(true);
+            _playerAnimator.ActivatePlayJump();
             _mover.Jump();
         } 
         else if (!_inputReader.GetIsJump() && _groundDetector.IsGround)
         {
-            _playerAnimator.SetBoolJump(false);
+            _playerAnimator.DeactivatePlayJump();
         }
     }
 }
